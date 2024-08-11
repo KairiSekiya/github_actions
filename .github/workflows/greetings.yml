@@ -1,0 +1,22 @@
+# ワークフローの名前
+name: Greetings
+# ワークフローを実行するタイミング
+on: [pull_request_target, issues]
+# アクションが発生した時に実行される内容
+jobs:
+  greeting:
+    # 動作する環境
+    runs-on: ubuntu-latest
+    # 与える権限の設定 write:書き込みの権限
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    # 既存のワークフローを利用する
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        # イシューを残したユーザーに送るメッセージ
+        issue-message: "初めてのイシュー"
+        # プルリクエストを送ったユーザーに送るメッセージ
+        pr-message: "プルリクエストありがとうございます"
