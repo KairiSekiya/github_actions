@@ -12,4 +12,4 @@
 - ワークフローはyamlファイルで作成される
 - 「commit changes ..」、「commit changes」
 - 「.github/workflows」の配下にyamlファイルが作られる
-- ブランチを作成して、プルリクエストを送る（プルリクエストがactionsのきっかけなので）
+- ブランチを作成して、プルリクエストを送る（今回はプルリクエストがactionsのきっかけなので）
